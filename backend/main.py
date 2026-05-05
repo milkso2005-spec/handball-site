@@ -86,6 +86,16 @@ def root():
 def health():
     return {"status": "ok", "db": bool(engine)}
 
+@api_router.get("/debug-env")
+def debug_env():
+    import os
+    db_url = os.getenv("DATABASE_URL")
+    return {
+        "has_db_url": bool(db_url),
+        "db_url_prefix": db_url[:12] if db_url else None,
+        "has_secret_key": bool(os.getenv("SECRET_KEY"))
+    }
+
 # ── PLAYERS ───────────────────────────────────────────────────────
 @api_router.get("/players", response_model=List[schemas.PlayerResponse])
 def get_players(db: Session = Depends(get_db)):
