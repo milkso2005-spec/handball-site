@@ -70,6 +70,10 @@ if api_key:
         api_secret=api_secret,
     )
 
+from fastapi import APIRouter
+
+api_router = APIRouter(prefix="/api")
+
 # ══════════════════════════════════════════════════════════════════
 #  PUBLIC ROUTES (no auth required)
 # ══════════════════════════════════════════════════════════════════
@@ -78,16 +82,16 @@ if api_key:
 def root():
     return {"message": "Handball Site API is running"}
 
-@app.get("/health")
+@api_router.get("/health")
 def health():
     return {"status": "ok", "db": bool(engine)}
 
 # ── PLAYERS ───────────────────────────────────────────────────────
-@app.get("/players", response_model=List[schemas.PlayerResponse])
+@api_router.get("/players", response_model=List[schemas.PlayerResponse])
 def get_players(db: Session = Depends(get_db)):
     return db.query(models.Player).all()
 
-@app.post("/players", response_model=schemas.PlayerResponse)
+@api_router.post("/players", response_model=schemas.PlayerResponse)
 def create_player(
     player: schemas.PlayerCreate, db: Session = Depends(get_db)
 ):
@@ -98,7 +102,7 @@ def create_player(
     return db_player
 
 # ── MATCHES ───────────────────────────────────────────────────────
-@app.get("/matches", response_model=List[schemas.MatchResponse])
+@api_router.get("/matches", response_model=List[schemas.MatchResponse])
 def get_matches(db: Session = Depends(get_db)):
     return (
         db.query(models.Match)
@@ -106,7 +110,7 @@ def get_matches(db: Session = Depends(get_db)):
         .all()
     )
 
-@app.post("/matches", response_model=schemas.MatchResponse)
+@api_router.post("/matches", response_model=schemas.MatchResponse)
 def create_match(
     match: schemas.MatchCreate, db: Session = Depends(get_db)
 ):
@@ -117,11 +121,11 @@ def create_match(
     return db_match
 
 # ── TROPHIES ───────────────────────────────────────────────────────
-@app.get("/trophies", response_model=List[schemas.TrophyResponse])
+@api_router.get("/trophies", response_model=List[schemas.TrophyResponse])
 def get_trophies(db: Session = Depends(get_db)):
     return db.query(models.Trophy).all()
 
-@app.post("/trophies", response_model=schemas.TrophyResponse)
+@api_router.post("/trophies", response_model=schemas.TrophyResponse)
 def create_trophy(
     trophy: schemas.TrophyCreate, db: Session = Depends(get_db)
 ):
@@ -132,7 +136,7 @@ def create_trophy(
     return db_trophy
 
 # ── HOMMAGES ───────────────────────────────────────────────────────
-@app.get("/hommages", response_model=List[schemas.HommageResponse])
+@api_router.get("/hommages", response_model=List[schemas.HommageResponse])
 def get_hommages(db: Session = Depends(get_db)):
     return (
         db.query(models.Hommage)
@@ -140,7 +144,7 @@ def get_hommages(db: Session = Depends(get_db)):
         .all()
     )
 
-@app.post("/hommages", response_model=schemas.HommageResponse)
+@api_router.post("/hommages", response_model=schemas.HommageResponse)
 def create_hommage(
     hommage: schemas.HommageCreate, db: Session = Depends(get_db)
 ):
@@ -154,7 +158,7 @@ def create_hommage(
 #  AUTH ROUTES
 # ══════════════════════════════════════════════════════════════════
 
-@app.post("/auth/login", response_model=schemas.Token)
+@api_router.post("/auth/login", response_model=schemas.Token)
 def login(request: schemas.LoginRequest, db: Session = Depends(get_db)):
     user = db.query(models.Admin).filter(models.Admin.email == request.email).first()
     if not user or not verify_password(request.password, user.hashed_password):
@@ -165,7 +169,7 @@ def login(request: schemas.LoginRequest, db: Session = Depends(get_db)):
     token = create_access_token(data={"sub": user.email})
     return {"access_token": token, "token_type": "bearer"}
 
-@app.get("/auth/me", response_model=schemas.AdminResponse)
+@api_router.get("/auth/me", response_model=schemas.AdminResponse)
 def get_me(current_user: models.Admin = Depends(get_current_user)):
     return current_user
 
@@ -173,7 +177,7 @@ def get_me(current_user: models.Admin = Depends(get_current_user)):
 #  ADMIN ROUTES (auth required)
 # ══════════════════════════════════════════════════════════════════
 
-@app.get("/stats", response_model=schemas.StatsResponse)
+@api_router.get("/stats", response_model=schemas.StatsResponse)
 def get_stats(db: Session = Depends(get_db)):
     return {
         "players": db.query(models.Player).count(),
@@ -183,14 +187,14 @@ def get_stats(db: Session = Depends(get_db)):
         "admins": db.query(models.Admin).count(),
     }
 
-@app.get("/admins", response_model=List[schemas.AdminResponse])
+@api_router.get("/admins", response_model=List[schemas.AdminResponse])
 def get_admins(
     db: Session = Depends(get_db),
     current_user: models.Admin = Depends(get_current_user),
 ):
     return db.query(models.Admin).all()
 
-@app.post("/admins", response_model=schemas.AdminResponse)
+@api_router.post("/admins", response_model=schemas.AdminResponse)
 def create_admin(
     admin: schemas.AdminCreate,
     db: Session = Depends(get_db),
@@ -213,7 +217,7 @@ def create_admin(
     return db_admin
 
 # ── UPLOAD TO CLOUDINARY ────────────────────────────────────────
-@app.post("/upload")
+@api_router.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
     if not os.getenv("CLOUDINARY_API_KEY"):
         return {"url": f"assets/images/uploaded_{file.filename}"}
@@ -229,3 +233,5 @@ async def upload_file(file: UploadFile = File(...)):
         return {"url": url}
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
+app.include_router(api_router)
