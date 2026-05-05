@@ -87,13 +87,26 @@ def health():
     return {"status": "ok", "db": bool(engine)}
 
 @api_router.get("/debug-env")
-def debug_env():
+def debug_env(db: Session = Depends(get_db)):
     import os
+    import traceback
     db_url = os.getenv("DATABASE_URL")
+    
+    db_test_status = "unknown"
+    db_error = None
+    try:
+        count = db.query(models.Admin).count()
+        db_test_status = "success"
+    except Exception as e:
+        db_test_status = "failed"
+        db_error = str(e)
+
     return {
         "has_db_url": bool(db_url),
-        "db_url_prefix": db_url[:12] if db_url else None,
-        "has_secret_key": bool(os.getenv("SECRET_KEY"))
+        "db_url_prefix": db_url[:25] if db_url else None,
+        "has_secret_key": bool(os.getenv("SECRET_KEY")),
+        "db_test_status": db_test_status,
+        "db_error": db_error
     }
 
 # ── PLAYERS ───────────────────────────────────────────────────────
