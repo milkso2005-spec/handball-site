@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Site officiel de l'équipe de handball - Histoire, actualités, palmarès et bien plus. Découvrez notre héritage sportif.">
+  <meta name="keywords" content="handball, équipe, sport, palmarès, competition, entrainement">
+  <meta property="og:title" content="Handball Team - Histoire & Passion">
+  <meta property="og:description" content="Découvrez l'histoire de notre équipe de handball">
+  <meta property="og:type" content="website">
+  <title>Handball Team - Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-ball"></div>
+    <p class="loader-text">Chargement...</p>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-ball nav-ball-left"></div>
+
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Logo">
+        HB<span>Team</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="entrainement.html">Entrainement</a>
+        <a href="competition.html">Compétition</a>
+        <a href="equipe/actifs.html">Équipe</a>
+        <a href="sacre.html">Sacre</a>
+        <a href="hommage.html">Hommage</a>
+      </div>
+
+      <div class="nav-ball nav-ball-right"></div>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile">
+    <a href="index.html">Accueil</a>
+    <a href="entrainement.html">Entrainement</a>
+    <a href="competition.html">Compétition</a>
+    <a href="equipe/actifs.html">Équipe</a>
+    <a href="sacre.html">Sacre</a>
+    <a href="hommage.html">Hommage</a>
+  </div>
+
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" aria-label="Changer le thème">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="assets/images/hero-banner.png" alt="Handball" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🏐 Saison 2024-2025</span>
+      <h1 class="hero-title">
+        L'Histoire d'une<br><span>Équipe Légendaire</span>
+      </h1>
+      <p class="hero-subtitle">Plus de 20 ans de passion, de victoires et de souvenirs impérissables. Découvrez l'âme de
+        notre équipe de handball.</p>
+      <div class="hero-buttons">
+        <a href="equipe/actifs.html" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Notre Équipe
+        </a>
+        <a href="sacre.html" class="btn btn-outline">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+            <path d="M4 22h16" />
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22" />
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20 17 22" />
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+          </svg>
+          Palmarès
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Défiler</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS COUNTER SECTION -->
+  <section class="counter-section">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item reveal">
+          <div class="counter-number" data-count="15" data-suffix="+">0+</div>
+          <div class="counter-label">Années d'Histoire</div>
+        </div>
+        <div class="counter-item reveal delay-1">
+          <div class="counter-number" data-count="23" data-suffix="">0</div>
+          <div class="counter-label">Trophées Gagnés</div>
+        </div>
+        <div class="counter-item reveal delay-2">
+          <div class="counter-number" data-count="150" data-suffix="+">0+</div>
+          <div class="counter-label">Joueurs Formés</div>
+        </div>
+        <div class="counter-item reveal delay-3">
+          <div class="counter-number" data-count="500" data-suffix="+">0+</div>
+          <div class="counter-label">Matchs Joués</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Qui sommes-nous</span>
+        <h2 class="section-title">Une <span>Passion</span> Transmise</h2>
+        <p class="section-desc">Depuis plus de 15 ans, notre équipe de handball incarne l'excellence sportive, la
+          solidarité et la détermination. Chaque match est une page d'histoire qui s'écrit ensemble.</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card reveal delay-1">
+          <div class="card-img">
+            <img src="assets/images/training-hero.png" alt="Entrainement">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Entrainement</h3>
+            <p class="card-text">Des séances intenses, une préparation rigoureuse et une recherche constante de la
+              perfection. Notre engagement à l'entraînement est la clé de nos performances en compétition.</p>
+            <a href="entrainement.html" class="btn btn-sm btn-dark mt-2">Voir les vidéos</a>
+          </div>
+        </div>
+
+        <div class="card reveal delay-2">
+          <div class="card-img">
+            <img src="assets/images/celebration.png" alt="Compétition">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Compétition</h3>
+            <p class="card-text">Des championnats régionaux aux compétitions nationales, notre équipe se distingue par
+              son esprit combatif et sa volonté de triompher face aux meilleurs adversaires du pays.</p>
+            <a href="competition.html" class="btn btn-sm btn-dark mt-2">Nos résultats</a>
+          </div>
+        </div>
+
+        <div class="card reveal delay-3">
+          <div class="card-img">
+            <img src="assets/images/team-photo.png" alt="Équipe">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Notre Famille</h3>
+            <p class="card-text">Anciens légendaires, joueurs actifs et nouvelles recrues forment une grande famille
+              unie par la même passion. Chaque génération enrichit l'héritage de notre club.</p>
+            <a href="equipe/actifs.html" class="btn btn-sm btn-dark mt-2">Découvrir l'équipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FEATURED PLAYERS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Effectif</span>
+        <h2 class="section-title">Joueurs à <span>la Une</span></h2>
+        <p class="section-desc">Découvrez quelques-uns des talents qui font briller notre équipe cette saison.</p>
+      </div>
+
+      <div class="player-grid">
+        <!-- Will be filled by JS -->
+      </div>
+
+      <div class="text-center mt-4 reveal">
+        <a href="equipe/actifs.html" class="btn btn-outline">Voir toute l'équipe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAST MATCHES -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Résultats</span>
+        <h2 class="section-title">Derniers <span>Matchs</span></h2>
+        <p class="section-desc">Retrouvez les résultats des dernières rencontres de notre équipe dans le championnat en
+          cours.</p>
+      </div>
+
+      <div class="competition-list">
+        <div class="match-card reveal">
+          <div class="match-team home">
+            <div class="match-team-logo">🏐</div>
+            <div>
+              <div class="match-team-name">HB Team</div>
+              <div class="match-team-sub">Domicile</div>
+            </div>
+          </div>
+          <div class="match-score">
+            <span class="match-status live">En direct</span>
+            <div class="match-score-display">
+              <span class="score-win">28</span>
+              <span style="color: var(--text-muted);">-</span>
+              <span>24</span>
+            </div>
+            <div class="match-date">Championnat National - Journée 18</div>
+          </div>
+          <div class="match-team away">
+            <div class="match-team-logo">⚡</div>
+            <div>
+              <div class="match-team-name">AS Dakar</div>
+              <div class="match-team-sub">Extérieur</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="match-card reveal delay-1">
+          <div class="match-team home">
+            <div class="match-team-logo">🏐</div>
+            <div>
+              <div class="match-team-name">HB Team</div>
+              <div class="match-team-sub">Domicile</div>
+            </div>
+          </div>
+          <div class="match-score">
+            <span class="match-status finished">Terminé</span>
+            <div class="match-score-display">
+              <span class="score-win">32</span>
+              <span style="color: var(--text-muted);">-</span>
+              <span class="score-loss">27</span>
+            </div>
+            <div class="match-date">Championnat National - Journée 17</div>
+          </div>
+          <div class="match-team away">
+            <div class="match-team-logo">🔥</div>
+            <div>
+              <div class="match-team-name">US Thiès</div>
+              <div class="match-team-sub">Extérieur</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="match-card reveal delay-2">
+          <div class="match-team home">
+            <div class="match-team-logo">🏐</div>
+            <div>
+              <div class="match-team-name">HB Team</div>
+              <div class="match-team-sub">Domicile</div>
+            </div>
+          </div>
+          <div class="match-score">
+            <span class="match-status finished">Terminé</span>
+            <div class="match-score-display">
+              <span class="score-loss">25</span>
+              <span style="color: var(--text-muted);">-</span>
+              <span class="score-win">30</span>
+            </div>
+            <div class="match-date">Coupe du Sénégal - Quart de finale</div>
+          </div>
+          <div class="match-team away">
+            <div class="match-team-logo">🛡️</div>
+            <div>
+              <div class="match-team-name">CSS Louga</div>
+              <div class="match-team-sub">Extérieur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 reveal">
+        <a href="competition.html" class="btn btn-primary">Voir tous les résultats</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Galerie</span>
+        <h2 class="section-title">Nos Meilleurs <span>Moments</span></h2>
+        <p class="section-desc">Revivez les instants forts de notre saison à travers notre galerie photo.</p>
+      </div>
+
+      <div class="gallery-masonry">
+        <div class="gallery-item reveal">
+          <img src="assets/images/player-action.png" alt="Action de jeu">
+          <div class="gallery-item-overlay">
+            <p>Action spectaculaire</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal delay-1">
+          <img src="assets/images/celebration.png" alt="Célébration" style="aspect-ratio: 1;">
+          <div class="gallery-item-overlay">
+            <p>Victoire historique</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal delay-2">
+          <img src="assets/images/team-photo.png" alt="Photo d'équipe">
+          <div class="gallery-item-overlay">
+            <p>Notre équipe</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal delay-3">
+          <img src="assets/images/training-hero.png" alt="Entrainement">
+          <div class="gallery-item-overlay">
+            <p>Séance d'entraînement</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal delay-4">
+          <img src="assets/images/hero-banner.png" alt="Match">
+          <div class="gallery-item-overlay">
+            <p>Nuit de match</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Logo" width="40" height="40" style="border-radius:50%;">
+            HB<span>Team</span>
+          </div>
+          <p class="footer-desc">Site dédié à la conservation de l'histoire de notre équipe de handball. Chaque photo,
+            chaque vidéo, chaque souvenir est précieux.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="entrainement.html">Entrainement</a>
+            <a href="competition.html">Compétition</a>
+            <a href="sacre.html">Sacre</a>
+            <a href="hommage.html">Hommage</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Équipe</h4>
+          <div class="footer-links">
+            <a href="equipe/actifs.html">Joueurs Actifs</a>
+            <a href="equipe/anciens.html">Anciens Joueurs</a>
+            <a href="equipe/nouveaux.html">Nouvelles Recrues</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Dakar, Sénégal</a>
+            <a href="#">📧 contact@hbteam.sn</a>
+            <a href="#">📞 +221 77 123 4567</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">&copy; 2025 HB<span>Team</span>. Tous droits réservés.</p>
+        <p class="footer-bottom-text">Fait avec 🏐 et ❤️ par BLACK WINDOWS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

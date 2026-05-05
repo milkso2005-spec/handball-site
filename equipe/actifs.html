@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joueurs actifs de l'équipe de handball - Effectif et statistiques">
+  <title>Joueurs Actifs - HB Team</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-ball"></div>
+    <p class="loader-text">Chargement...</p>
+  </div>
+  <div class="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-ball nav-ball-left"></div>
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/logo.png" alt="Logo">
+        HB<span>Team</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Accueil</a>
+        <a href="../entrainement.html">Entrainement</a>
+        <a href="../competition.html">Compétition</a>
+        <a href="actifs.html" class="active">Équipe</a>
+        <a href="../sacre.html">Sacre</a>
+        <a href="../hommage.html">Hommage</a>
+      </div>
+      <div class="nav-ball nav-ball-right"></div>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="../index.html">Accueil</a>
+    <a href="../entrainement.html">Entrainement</a>
+    <a href="../competition.html">Compétition</a>
+    <a href="actifs.html">Équipe</a>
+    <a href="../sacre.html">Sacre</a>
+    <a href="../hommage.html">Hommage</a>
+  </div>
+
+  <button class="theme-toggle" aria-label="Changer le thème">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
+
+  <div class="page-header">
+    <div class="page-header-hero">
+      <img src="../assets/images/player-action.png" alt="Joueurs Actifs" class="page-header-bg">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <h1 class="page-header-title">⚡ Joueurs Actifs</h1>
+        <p class="page-header-desc">L'effectif actuel de notre équipe pour la saison 2024-2025</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="equipe-nav">
+    <a href="anciens.html">Anciens</a>
+    <a href="actifs.html" class="active">Actifs</a>
+    <a href="nouveaux.html">Nouveaux</a>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Effectif</span>
+        <h2 class="section-title">Notre <span>Équipe</span> Actuelle</h2>
+        <p class="section-desc">Découvrez les joueurs qui défendent nos couleurs cette saison. Une équipe jeune,
+          talentueuse et ambitieuse.</p>
+      </div>
+
+      <!-- Position Filters -->
+      <div class="competition-filters reveal">
+        <button class="filter-btn position-filter active" data-position="all">Tous</button>
+        <button class="filter-btn position-filter" data-position="pivot">Pivots</button>
+        <button class="filter-btn position-filter" data-position="demi-centre">Demi-centres</button>
+        <button class="filter-btn position-filter" data-position="gardien">Gardiens</button>
+        <button class="filter-btn position-filter" data-position="ailier">Ailiers</button>
+        <button class="filter-btn position-filter" data-position="arriere">Arrières</button>
+      </div>
+
+      <div class="player-grid">
+        <!-- Player 1 -->
+        <div class="player-card reveal" data-position="pivot">
+          <div class="player-card-img">
+            <img src="../assets/images/player-action.png" alt="Ibrahim Touré">
+            <span class="player-position">Pivot</span>
+            <div class="player-number">07</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Mouhamed Niang</h3>
+            <p class="player-role">Pivot - Leader</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">234</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">98</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">178</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-1" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="player-card reveal delay-1" data-position="demi-centre">
+          <div class="player-card-img">
+            <img src="../assets/images/team-photo.png" alt="Karim Benzema">
+            <span class="player-position">Demi-centre</span>
+            <div class="player-number">10</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Aliou Thioye</h3>
+            <p class="player-role">Demi-centre - Playmaker</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">312</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">112</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">456</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-2" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="player-card reveal delay-2" data-position="gardien">
+          <div class="player-card-img">
+            <img src="../assets/images/celebration.png" alt="Aliou Diop">
+            <span class="player-position">Gardien</span>
+            <div class="player-number">01</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Mamadou Lamine Sonko</h3>
+            <p class="player-role">Gardien - Titulaire</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">3</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">87</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">124</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-3" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+
+        <!-- Player 4 -->
+        <div class="player-card reveal delay-3" data-position="ailier">
+          <div class="player-card-img">
+            <img src="../assets/images/hero-banner.png" alt="Moussa Sow">
+            <span class="player-position">Ailier gauche</span>
+            <div class="player-number">11</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Baye Dame Ngom</h3>
+            <p class="player-role">Ailier - Meilleur marqueur</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">456</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">95</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">198</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-4" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+
+        <!-- Player 5 -->
+        <div class="player-card reveal delay-4" data-position="ailier">
+          <div class="player-card-img">
+            <img src="../assets/images/training-hero.png" alt="Boubacar Fall">
+            <span class="player-position">Ailier droit</span>
+            <div class="player-number">14</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Abdou Magib Sy</h3>
+            <p class="player-role">Ailier - Polyvalent</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">287</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">103</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">234</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-5" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+
+        <!-- Player 6 -->
+        <div class="player-card reveal delay-5" data-position="arriere">
+          <div class="player-card-img">
+            <img src="../assets/images/player-action.png" alt="Abdou Ndiaye">
+            <span class="player-position">Arrière gauche</span>
+            <div class="player-number">05</div>
+          </div>
+          <div class="player-card-body">
+            <h3 class="player-name">Omar Ndiaye</h3>
+            <p class="player-role">Arrière - Tireur d'élite</p>
+            <div class="player-stats">
+              <div class="player-stat">
+                <div class="player-stat-value">389</div>
+                <div class="player-stat-label">Buts</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">108</div>
+                <div class="player-stat-label">Matchs</div>
+              </div>
+              <div class="player-stat">
+                <div class="player-stat-value">167</div>
+                <div class="player-stat-label">Passes</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2" data-player="actif-6" style="width:100%;">Voir Plus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/logo.png" alt="Logo" width="40" height="40" style="border-radius:50%;">
+            HB<span>Team</span>
+          </div>
+          <p class="footer-desc">Site dédié à la conservation de l'histoire de notre équipe de handball.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="../entrainement.html">Entrainement</a>
+            <a href="../competition.html">Compétition</a>
+            <a href="../sacre.html">Sacre</a>
+            <a href="../hommage.html">Hommage</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Équipe</h4>
+          <div class="footer-links">
+            <a href="anciens.html">Anciens Joueurs</a>
+            <a href="actifs.html">Joueurs Actifs</a>
+            <a href="nouveaux.html">Nouvelles Recrues</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Dakar, Sénégal</a>
+            <a href="#">📧 contact@hbteam.sn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">&copy; 2025 HB<span>Team</span>. Tous droits réservés.</p>
+        <p class="footer-bottom-text">Fait avec 🏐 et ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Contenu - Admin HB Team</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+<body>
+
+  <div class="toast-container-admin"></div>
+  <div class="sidebar-overlay"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-logo">
+        <img src="../assets/images/logo.png" alt="Logo">
+        <div class="sidebar-logo-text">
+          <h2>HB<span>Team</span></h2>
+          <small>Administration</small>
+        </div>
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Principal</div>
+      <a href="dashboard.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="manage-content.html" class="sidebar-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Gestion Contenu
+        <span class="badge">5</span>
+      </a>
+      <a href="manage-users.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Gestion Admins
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">S</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Super Admin</div>
+          <div class="sidebar-user-role">Super Admin</div>
+        </div>
+        <button class="sidebar-logout" onclick="handleLogout()" title="Déconnexion">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="topbar-burger" aria-label="Menu">☰</button>
+        <div class="topbar-title">
+          <h1>Gestion du Contenu</h1>
+          <p>Ajouter et modifier le contenu du site</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <a href="../index.html" class="topbar-visit" target="_blank">🌐 Voir le site</a>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab-group="content" data-tab="entrainement" onclick="switchTab('content','entrainement')">🏋️ Entrainement</button>
+        <button class="admin-tab" data-tab-group="content" data-tab="competition" onclick="switchTab('content','competition')">🏆 Compétition</button>
+        <button class="admin-tab" data-tab-group="content" data-tab="equipe" onclick="switchTab('content','equipe')">🏐 Équipe</button>
+        <button class="admin-tab" data-tab-group="content" data-tab="sacre" onclick="switchTab('content','sacre')">🥇 Sacre</button>
+        <button class="admin-tab" data-tab-group="content" data-tab="hommage" onclick="switchTab('content','hommage')">🕊️ Hommage</button>
+        <button class="admin-tab" data-tab-group="content" data-tab="media" onclick="switchTab('content','media')">📸 Médias</button>
+      </div>
+
+      <!-- TAB: Entrainement -->
+      <div id="entrainement" data-tab-content="content" style="display: block;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>🏋️ Gestion des Vidéos d'Entrainement</h2>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>📹 Ajouter une Vidéo</h2>
+            </div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <form onsubmit="event.preventDefault(); showToast('Vidéo ajoutée avec succès !', 'success'); addActivityLog('success', 'Nouvelle vidéo ajoutée'); this.reset();">
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Titre de la vidéo</label>
+                    <input type="text" class="form-input" placeholder="Ex: Entrainement tactique..." required>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Lien YouTube / URL</label>
+                    <input type="url" class="form-input" placeholder="https://youtube.com/watch?v=...">
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Description</label>
+                  <textarea class="form-input" placeholder="Description de la vidéo..."></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label>Ou uploadez une vidéo</label>
+                  <div class="upload-area">
+                    <div class="upload-area-icon">☁️</div>
+                    <p class="upload-area-text">Glissez votre vidéo ici ou cliquez pour parcourir</p>
+                    <p class="upload-area-hint">MP4, WebM, MOV - Max 500MB</p>
+                    <input type="file" accept="video/*">
+                  </div>
+                  <div class="upload-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                    <p class="progress-text">En attente...</p>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: auto;">
+                  📹 Ajouter la Vidéo
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Existing Videos -->
+          <div class="admin-card" style="margin-top: 24px;">
+            <div class="admin-card-header">
+              <h2>📋 Vidéos existantes (6)</h2>
+            </div>
+            <div class="admin-card-body">
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Vidéo</th><th>Date</th><th>Vues</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Entrainement Tactique - Mouvements</strong></td>
+                    <td>15 Mars 2025</td><td>1.2k</td>
+                    <td><div class="table-actions"><button>✏️</button><button class="delete">🗑️</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Exercices de Tir - Précision</strong></td>
+                    <td>10 Mars 2025</td><td>890</td>
+                    <td><div class="table-actions"><button>✏️</button><button class="delete">🗑️</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Travail Défensif - 6-0 / 5-1</strong></td>
+                    <td>05 Mars 2025</td><td>756</td>
+                    <td><div class="table-actions"><button>✏️</button><button class="delete">🗑️</button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Competition -->
+      <div id="competition" data-tab-content="content" style="display: none;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>🏆 Gestion des Matchs</h2>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h2>➕ Ajouter un Match</h2></div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <form onsubmit="addMatch(event)">
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Équipe Domicile</label>
+                    <input type="text" id="match-home" class="form-input" value="HB Team" required>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Équipe Extérieur</label>
+                    <input type="text" id="match-away" class="form-input" placeholder="Nom adversaire" required>
+                  </div>
+                </div>
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Score Domicile</label>
+                    <input type="number" id="score-home" class="form-input" placeholder="28" min="0" required>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Score Extérieur</label>
+                    <input type="number" id="score-away" class="form-input" placeholder="24" min="0" required>
+                  </div>
+                </div>
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Statut</label>
+                    <select id="match-status" class="form-input">
+                      <option value="finished">Terminé</option>
+                      <option value="upcoming">À venir</option>
+                      <option value="live">En direct</option>
+                    </select>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Compétition</label>
+                    <select id="match-competition" class="form-input">
+                      <option>Championnat National</option>
+                      <option>Coupe du Sénégal</option>
+                      <option>Supercoupe</option>
+                      <option>Tour International</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Images / Vidéos du match</label>
+                  <div class="upload-area">
+                    <div class="upload-area-icon">📸</div>
+                    <p class="upload-area-text">Glissez vos fichiers ici</p>
+                    <p class="upload-area-hint">Images (JPG, PNG) et Vidéos (MP4)</p>
+                    <input type="file" accept="image/*,video/*" multiple>
+                  </div>
+                  <div class="upload-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                    <p class="progress-text">En attente...</p>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: auto;">🏆 Ajouter le Match</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Equipe -->
+      <div id="equipe" data-tab-content="content" style="display: none;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>🏐 Gestion des Joueurs</h2>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h2>➕ Ajouter un Joueur</h2></div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <form onsubmit="addPlayer(event)">
+                <input type="hidden" id="player-photo-url" value="assets/images/player-action.png">
+                <div class="form-group-admin">
+                  <label>Photo du joueur</label>
+                  <div class="upload-area" style="padding: 30px;">
+                    <div class="upload-area-icon">📷</div>
+                    <p class="upload-area-text">Photo du joueur</p>
+                    <p class="upload-area-hint">JPG, PNG - Max 5MB</p>
+                    <input type="file" accept="image/*">
+                  </div>
+                  <div class="upload-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                    <p class="progress-text">En attente...</p>
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Nom complet</label>
+                  <input type="text" id="player-name" class="form-input" placeholder="Ex: Mamadou Diallo" required>
+                </div>
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Poste</label>
+                    <select id="player-poste" class="form-input" required>
+                      <option value="">Sélectionner...</option>
+                      <option value="pivot">Pivot</option>
+                      <option value="demi-centre">Demi-centre</option>
+                      <option value="gardien">Gardien</option>
+                      <option value="ailier-gauche">Ailier gauche</option>
+                      <option value="ailier-droit">Ailier droit</option>
+                      <option value="arriere-gauche">Arrière gauche</option>
+                      <option value="arriere-droit">Arrière droit</option>
+                    </select>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Catégorie</label>
+                    <select id="player-category" class="form-input" required>
+                      <option value="">Sélectionner...</option>
+                      <option value="actif">⚽ Actif</option>
+                      <option value="ancien">👥 Ancien</option>
+                      <option value="nouveau">🌟 Nouveau</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Biographie / Histoire</label>
+                  <textarea class="form-input" placeholder="Histoire et parcours du joueur..."></textarea>
+                </div>
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Numéro</label>
+                    <input type="number" class="form-input" placeholder="07" min="1" max="99">
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Années d'activité</label>
+                    <input type="text" class="form-input" placeholder="2020 - Présent">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: auto;">🏐 Ajouter le Joueur</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Sacre -->
+      <div id="sacre" data-tab-content="content" style="display: none;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>🥇 Gestion des Trophées</h2>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h2>➕ Ajouter un Trophée</h2></div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <form onsubmit="addTrophy(event)">
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Année</label>
+                    <input type="text" id="trophy-year" class="form-input" placeholder="2025" required>
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Compétition</label>
+                    <select class="form-input">
+                      <option>Championnat National</option>
+                      <option>Coupe du Sénégal</option>
+                      <option>Supercoupe</option>
+                      <option>Tour International</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Nom du trophée / Description</label>
+                  <input type="text" id="trophy-name" class="form-input" placeholder="Ex: Double Championnat-Coupe" required>
+                </div>
+                <div class="form-group-admin">
+                  <label>Description détaillée</label>
+                  <textarea id="trophy-description" class="form-input" placeholder="Récit de la victoire..."></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label>Photo du trophée</label>
+                  <div class="upload-area" style="padding: 30px;">
+                    <div class="upload-area-icon">🏆</div>
+                    <p class="upload-area-text">Photo du trophée</p>
+                    <p class="upload-area-hint">JPG, PNG - Max 5MB</p>
+                    <input type="file" accept="image/*">
+                  </div>
+                  <div class="upload-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                    <p class="progress-text">En attente...</p>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: auto;">🥇 Ajouter le Trophée</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Hommage -->
+      <div id="hommage" data-tab-content="content" style="display: none;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>🕊️ Gestion des Hommages</h2>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h2>➕ Ajouter un Hommage</h2></div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <form onsubmit="addHommage(event)">
+                <div class="form-group-admin">
+                  <label>Nom de la personne</label>
+                  <input type="text" id="hommage-name" class="form-input" placeholder="Ex: Coach Ibrahim Ndiaye" required>
+                </div>
+                <div class="form-group-admin">
+                  <label>Message / Témoignage</label>
+                  <textarea id="hommage-message" class="form-input" placeholder="Message en hommage..." required style="min-height: 160px;"></textarea>
+                </div>
+                <div class="form-row-admin">
+                  <div class="form-group-admin">
+                    <label>Rôle / Période</label>
+                    <input type="text" id="hommage-subtitle" class="form-input" placeholder="Ex: Coach Fondateur 2003-2023">
+                  </div>
+                  <div class="form-group-admin">
+                    <label>Type</label>
+                    <select class="form-input">
+                      <option>Hommage</option>
+                      <option>Témoignage</option>
+                      <option>Mémoire</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group-admin">
+                  <label>Photo / Vidéo</label>
+                  <div class="upload-area" style="padding: 30px;">
+                    <div class="upload-area-icon">🕊️</div>
+                    <p class="upload-area-text">Média associé</p>
+                    <p class="upload-area-hint">Images ou vidéos</p>
+                    <input type="file" accept="image/*,video/*">
+                  </div>
+                  <div class="upload-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                    <p class="progress-text">En attente...</p>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: auto;">🕊️ Publier l'Hommage</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Media -->
+      <div id="media" data-tab-content="content" style="display: none;">
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2>📸 Galerie Média</h2>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h2>☁️ Upload vers le Cloud</h2></div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <div class="upload-area">
+                <div class="upload-area-icon">☁️</div>
+                <p class="upload-area-text">Glissez vos fichiers ici ou cliquez</p>
+                <p class="upload-area-hint">Images (JPG, PNG, WebP) et Vidéos (MP4, WebM) - Max 500MB</p>
+                <input type="file" accept="image/*,video/*" multiple>
+              </div>
+              <div class="upload-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <p class="progress-text">En attente...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card" style="margin-top: 24px;">
+            <div class="admin-card-header">
+              <h2>📁 Médias existants</h2>
+              <span style="font-size: 13px; color: var(--gray-500);">8 fichiers</span>
+            </div>
+            <div class="admin-card-body" style="padding: 24px;">
+              <div class="media-grid">
+                <div class="media-item">
+                  <img src="../assets/images/hero-banner.png" alt="hero">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="../assets/images/team-photo.png" alt="team">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="../assets/images/player-action.png" alt="action">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="../assets/images/celebration.png" alt="celebration">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="../assets/images/training-hero.png" alt="training">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="../assets/images/trophy.png" alt="trophy">
+                  <div class="media-item-overlay">
+                    <button title="Voir">👁️</button>
+                    <button class="delete" title="Supprimer">🗑️</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

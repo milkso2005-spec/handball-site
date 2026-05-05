@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Palmarès et sacres de l'équipe de handball - Tous nos trophées et victoires">
+  <title>Sacre & Palmarès - HB Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-ball"></div>
+    <p class="loader-text">Chargement...</p>
+  </div>
+  <div class="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-ball nav-ball-left"></div>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Logo">
+        HB<span>Team</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="entrainement.html">Entrainement</a>
+        <a href="competition.html">Compétition</a>
+        <a href="equipe/actifs.html">Équipe</a>
+        <a href="sacre.html" class="active">Sacre</a>
+        <a href="hommage.html">Hommage</a>
+      </div>
+      <div class="nav-ball nav-ball-right"></div>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html">Accueil</a>
+    <a href="entrainement.html">Entrainement</a>
+    <a href="competition.html">Compétition</a>
+    <a href="equipe/actifs.html">Équipe</a>
+    <a href="sacre.html">Sacre</a>
+    <a href="hommage.html">Hommage</a>
+  </div>
+
+  <button class="theme-toggle" aria-label="Changer le thème">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <div class="page-header">
+    <div class="page-header-hero">
+      <img src="assets/images/trophy.png" alt="Sacre" class="page-header-bg">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <h1 class="page-header-title">🥇 Sacre & Palmarès</h1>
+        <p class="page-header-desc">Tous nos titres, trophées et moments de gloire depuis la création du club</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COUNTER -->
+  <section class="counter-section">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item reveal">
+          <div class="counter-number" data-count="8" data-suffix="">0</div>
+          <div class="counter-label">Championnats</div>
+        </div>
+        <div class="counter-item reveal delay-1">
+          <div class="counter-number" data-count="5" data-suffix="">0</div>
+          <div class="counter-label">Coupes</div>
+        </div>
+        <div class="counter-item reveal delay-2">
+          <div class="counter-number" data-count="6" data-suffix="">0</div>
+          <div class="counter-label">Supercoupes</div>
+        </div>
+        <div class="counter-item reveal delay-3">
+          <div class="counter-number" data-count="4" data-suffix="">0</div>
+          <div class="counter-label">Tours Internationaux</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Notre Histoire</span>
+        <h2 class="section-title">Timeline des <span>Sacres</span></h2>
+        <p class="section-desc">Revivez chaque titre, chaque trophée soulevé, chaque moment historique de notre club</p>
+      </div>
+
+      <div class="timeline">
+        <!-- 2024 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <h3 class="timeline-title">🏆 Double Championnat-Coupe</h3>
+            <p class="timeline-desc">Une saison historique avec le sacre en championnat national et la victoire en coupe du Sénégal. L'équipe dirigée par Ibrahim Touré a réalisé un parcours parfait, ne concédant que 2 défaites sur l'ensemble de la saison. La finale de coupe s'est terminée sur le score de 34-28 face à l'AS Dakar.</p>
+            <img src="assets/images/celebration.png" alt="Célébration 2024" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2022</div>
+            <h3 class="timeline-title">🏆 Supercoupe Nationale</h3>
+            <p class="timeline-desc">Après un championnat maîtrisé, l'équipe remporte la Supercoupe face au tenant du titre. Un match intensif avec une victoire 31-29 dans les dernières secondes, marqué par un but spectaculaire de Moussa Sow à la sirène finale.</p>
+            <img src="assets/images/trophy.png" alt="Supercoupe 2022" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2020</div>
+            <h3 class="timeline-title">🏆 Championnat National</h3>
+            <p class="timeline-desc">Malgré une saison perturbée, l'équipe a montré une résilience exceptionnelle pour décrocher le titre de champion. Karim Benzema, alors tout jeune joueur, s'est illustré comme le meilleur passeur du championnat avec 234 passes décisives.</p>
+            <img src="assets/images/player-action.png" alt="Championnat 2020" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2018</div>
+            <h3 class="timeline-title">🏆 Triplé Historique</h3>
+            <p class="timeline-desc">La saison la plus glorieuse de l'histoire du club avec trois trophées remportés : Championnat, Coupe et Supercoupe. Une génération dorée menée par Mamadou Diallo et Omar Benali qui ont brillé de mille feux avant de prendre leur retraite sportive.</p>
+            <img src="assets/images/celebration.png" alt="Triplé 2018" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2015</div>
+            <h3 class="timeline-title">🏆 Coupe du Sénégal</h3>
+            <p class="timeline-desc">Victoire en finale de coupe après une remontée historique. Menés de 6 buts à la mi-temps, les joueurs ont réalisé un second temps mémorable pour s'imposer 32-30. Jean-Pierre Mbappé a annoncé sa retraite juste après ce match légendaire.</p>
+            <img src="assets/images/team-photo.png" alt="Coupe 2015" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2012 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2012</div>
+            <h3 class="timeline-title">🏆 Premier Tour International</h3>
+            <p class="timeline-desc">L'équipe participe pour la première fois à un tournoi international et revient avec la médaille d'or. Une victoire 35-30 en finale contre une équipe de Côte d'Ivoire. Ce tournoi a marqué le début de la reconnaissance du club sur la scène africaine.</p>
+            <img src="assets/images/hero-banner.png" alt="Tour International 2012" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2010 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2010</div>
+            <h3 class="timeline-title">🏆 Championnat National (2e titre)</h3>
+            <p class="timeline-desc">Deuxième titre de championnat confirmant la montée en puissance du club. Avec une défense de fer dirigée par Omar Benali et une attaque explosive menée par Seydou Konaté, l'équipe a dominé le championnat de bout en bout.</p>
+            <img src="assets/images/training-hero.png" alt="Championnat 2010" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 2007 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2007</div>
+            <h3 class="timeline-title">🏆 Premier Championnat National</h3>
+            <p class="timeline-desc">Le premier trophée majeur du club ! Après des années de travail acharné et de construction, l'équipe remporte enfin le championnat national. Ce sacre fondateur a posé les bases d'une dynastie qui perdure jusqu'à aujourd'hui. Les festivités ont duré une semaine entière à Dakar.</p>
+            <img src="assets/images/trophy.png" alt="Premier Championnat 2007" class="timeline-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TROPHY GALLERY -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Galerie</span>
+        <h2 class="section-title">Nos <span>Trophées</span></h2>
+      </div>
+      <div class="gallery-masonry">
+        <div class="gallery-item reveal">
+          <img src="assets/images/trophy.png" alt="Trophée" style="aspect-ratio:1;">
+          <div class="gallery-item-overlay"><p>Collection de trophées</p></div>
+        </div>
+        <div class="gallery-item reveal delay-1">
+          <img src="assets/images/celebration.png" alt="Célébration">
+          <div class="gallery-item-overlay"><p>Fête de champion</p></div>
+        </div>
+        <div class="gallery-item reveal delay-2">
+          <img src="assets/images/team-photo.png" alt="Équipe championne">
+          <div class="gallery-item-overlay"><p>Équipe championne 2024</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Logo" width="40" height="40" style="border-radius:50%;">
+            HB<span>Team</span>
+          </div>
+          <p class="footer-desc">Site dédié à la conservation de l'histoire de notre équipe de handball.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="entrainement.html">Entrainement</a>
+            <a href="competition.html">Compétition</a>
+            <a href="sacre.html">Sacre</a>
+            <a href="hommage.html">Hommage</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Équipe</h4>
+          <div class="footer-links">
+            <a href="equipe/actifs.html">Joueurs Actifs</a>
+            <a href="equipe/anciens.html">Anciens Joueurs</a>
+            <a href="equipe/nouveaux.html">Nouvelles Recrues</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Dakar, Sénégal</a>
+            <a href="#">📧 contact@hbteam.sn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">&copy; 2025 HB<span>Team</span>. Tous droits réservés.</p>
+        <p class="footer-bottom-text">Fait avec 🏐 et ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

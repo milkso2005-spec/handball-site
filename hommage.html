@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Hommage aux membres importants de notre équipe de handball - Mémoire et recueillement">
+  <title>Hommage - HB Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-ball"></div>
+    <p class="loader-text">Chargement...</p>
+  </div>
+  <div class="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-ball nav-ball-left"></div>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Logo">
+        HB<span>Team</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="entrainement.html">Entrainement</a>
+        <a href="competition.html">Compétition</a>
+        <a href="equipe/actifs.html">Équipe</a>
+        <a href="sacre.html">Sacre</a>
+        <a href="hommage.html" class="active">Hommage</a>
+      </div>
+      <div class="nav-ball nav-ball-right"></div>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html">Accueil</a>
+    <a href="entrainement.html">Entrainement</a>
+    <a href="competition.html">Compétition</a>
+    <a href="equipe/actifs.html">Équipe</a>
+    <a href="sacre.html">Sacre</a>
+    <a href="hommage.html">Hommage</a>
+  </div>
+
+  <button class="theme-toggle" aria-label="Changer le thème">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
+
+  <!-- HOMMAGE SECTION -->
+  <section class="hommage-section">
+    <!-- Hero -->
+    <div class="hommage-hero">
+      <img src="assets/images/hommage-hero.png" alt="Hommage" class="hommage-hero-bg">
+      <div class="hommage-hero-overlay"></div>
+      <div class="container" style="position: relative; z-index: 2;">
+        <h1 class="hommage-title">🕊️ Hommage</h1>
+        <p class="hommage-subtitle">"Ceux qui partent ne sont jamais vraiment partis. Ils vivent dans nos mémoires et
+          dans nos cœurs."</p>
+      </div>
+    </div>
+
+    <!-- Hommage Cards -->
+    <div class="hommage-gallery">
+      <div class="container">
+        <div class="section-header reveal" style="margin-top: 40px;">
+          <span class="section-tag" style="color: var(--orange);">Mémoire</span>
+          <h2 class="section-title" style="color: var(--white);">En Leur <span>Souvenir</span></h2>
+          <p class="section-desc" style="color: var(--gray-400);">Nous rendons hommage à ceux qui ont marqué notre
+            histoire et qui resteront à jamais dans nos cœurs. Leur passion, leur dévouement et leur amour du handball
+            restent une source d'inspiration pour toutes les générations.</p>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+          <!-- Hommage 1 -->
+          <div class="hommage-card reveal">
+            <div class="hommage-card-img">
+              <img src="assets/images/team-photo.png" alt="Coach Ibrahim">
+            </div>
+            <div class="hommage-card-body">
+              <h3 class="hommage-card-name">Coach Ibrahim Ndiaye</h3>
+              <p class="hommage-card-message">"Le handball n'est pas juste un sport, c'est une famille. Coach Ibrahim a
+                été le père de cette famille pendant plus de 20 ans. Sa sagesse, sa patience et sa passion ont façonné
+                des générations de champions. Chaque joueur qui a porté ce maillot lui doit une part de ce qu'il est
+                devenu."</p>
+              <p style="margin-top: 12px; font-size: 13px; color: var(--gray-500);">Coach Fondateur • 2003 - 2023</p>
+            </div>
+          </div>
+
+          <!-- Hommage 2 -->
+          <div class="hommage-card reveal delay-1">
+            <div class="hommage-card-img">
+              <img src="assets/images/celebration.png" alt="Souleymane">
+            </div>
+            <div class="hommage-card-body">
+              <h3 class="hommage-card-name">Souleymane Diop</h3>
+              <p class="hommage-card-message">"Souleymane était plus qu'un joueur, c'était un frère pour chacun d'entre
+                nous. Son sourire illuminaient les vestiaires, sa combativité sur le terrain inspirait toute l'équipe.
+                Il nous a quittés trop tôt mais son esprit vit dans chaque match que nous jouons. Cette équipe, c'est
+                aussi son héritage."</p>
+              <p style="margin-top: 12px; font-size: 13px; color: var(--gray-500);">Arrière gauche • 2010 - 2019</p>
+            </div>
+          </div>
+
+          <!-- Hommage 3 -->
+          <div class="hommage-card reveal delay-2">
+            <div class="hommage-card-img">
+              <img src="assets/images/player-action.png" alt="Aminata">
+            </div>
+            <div class="hommage-card-body">
+              <h3 class="hommage-card-name">Aminata Fall</h3>
+              <p class="hommage-card-message">"Aminata a été la voix du handball féminin dans notre communauté. En tant
+                que joueuse puis entraîneuse, elle a ouvert la voie à de nombreuses jeunes filles. Son dévouement à la
+                formation des jeunes restera son plus grand legs. Elle nous a appris que le handball n'a pas de genre,
+                seulement du cœur."</p>
+              <p style="margin-top: 12px; font-size: 13px; color: var(--gray-500);">Entraîneuse • 2008 - 2022</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="section-header reveal" style="margin-top: 80px;">
+          <span class="section-tag" style="color: var(--orange);">Témoignages</span>
+          <h2 class="section-title" style="color: var(--white);">Vidéos <span>Hommage</span></h2>
+        </div>
+
+        <div class="video-player-container reveal" style="max-width: 800px;">
+          <div class="video-placeholder">
+            <div class="video-play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <p style="color: var(--gray-400); font-family: var(--font-subheading); font-size: 16px;">Vidéo hommage - En
+              leur mémoire</p>
+          </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="reveal"
+          style="margin-top: 80px; text-align: center; padding: 60px 40px; background: rgba(255, 107, 0, 0.05); border-radius: var(--radius-lg); border: 1px solid rgba(255, 107, 0, 0.1);">
+          <p
+            style="font-size: 24px; color: var(--white); font-family: var(--font-subheading); font-style: italic; line-height: 1.8; max-width: 700px; margin: 0 auto;">
+            "Le véritable champion n'est pas celui qui gagne toutes les batailles, mais celui qui laisse une trace
+            indélébile dans le cœur de ceux qui l'entourent."
+          </p>
+          <p
+            style="margin-top: 20px; font-size: 14px; color: var(--orange); font-family: var(--font-heading); letter-spacing: 2px;">
+            — HANDBALL TEAM LEGACY</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Logo" width="40" height="40" style="border-radius:50%;">
+            HB<span>Team</span>
+          </div>
+          <p class="footer-desc">Site dédié à la conservation de l'histoire de notre équipe de handball.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="entrainement.html">Entrainement</a>
+            <a href="competition.html">Compétition</a>
+            <a href="sacre.html">Sacre</a>
+            <a href="hommage.html">Hommage</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Équipe</h4>
+          <div class="footer-links">
+            <a href="equipe/actifs.html">Joueurs Actifs</a>
+            <a href="equipe/anciens.html">Anciens Joueurs</a>
+            <a href="equipe/nouveaux.html">Nouvelles Recrues</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Dakar, Sénégal</a>
+            <a href="#">📧 contact@hbteam.sn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">&copy; 2025 HB<span>Team</span>. Tous droits réservés.</p>
+        <p class="footer-bottom-text">Fait avec 🏐 et ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

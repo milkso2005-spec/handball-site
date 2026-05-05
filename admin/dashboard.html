@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Admin HB Team</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+<body>
+
+  <div class="toast-container-admin"></div>
+  <div class="sidebar-overlay"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-logo">
+        <img src="../assets/images/logo.png" alt="Logo">
+        <div class="sidebar-logo-text">
+          <h2>HB<span>Team</span></h2>
+          <small>Administration</small>
+        </div>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Principal</div>
+      <a href="dashboard.html" class="sidebar-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="manage-content.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Gestion Contenu
+        <span class="badge">5</span>
+      </a>
+      <a href="manage-users.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Gestion Admins
+      </a>
+
+      <div class="sidebar-nav-label">Actions rapides</div>
+      <a href="manage-content.html#entrainement" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        + Ajouter Vidéo
+      </a>
+      <a href="manage-content.html#equipe" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        + Ajouter Joueur
+      </a>
+      <a href="manage-content.html#competition" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        + Ajouter Match
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">S</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Super Admin</div>
+          <div class="sidebar-user-role">Super Admin</div>
+        </div>
+        <button class="sidebar-logout" onclick="handleLogout()" title="Déconnexion">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="topbar-burger" aria-label="Menu">☰</button>
+        <div class="topbar-title">
+          <h1>Dashboard</h1>
+          <p>Vue d'ensemble du site</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <a href="../index.html" class="topbar-visit" target="_blank">
+          🌐 Voir le site
+        </a>
+        <button class="topbar-link" title="Notifications">
+          🔔
+          <span class="notif-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card-admin">
+          <div class="stat-card-icon orange">🏐</div>
+          <div class="stat-card-info">
+            <h3 id="stat-players">0</h3>
+            <p>Joueurs</p>
+            <div class="trend up">↑ +2 ce mois</div>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-card-icon blue">🎥</div>
+          <div class="stat-card-info">
+            <h3 id="stat-videos">0</h3>
+            <p>Vidéos</p>
+            <div class="trend up">↑ +5 ce mois</div>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-card-icon green">🏆</div>
+          <div class="stat-card-info">
+            <h3 id="stat-competitions">0</h3>
+            <p>Compétitions</p>
+            <div class="trend up">↑ +1 ce mois</div>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-card-icon purple">🥇</div>
+          <div class="stat-card-info">
+            <h3 id="stat-trophies">0</h3>
+            <p>Trophées</p>
+            <div class="trend">— stable</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+        <!-- Recent Content -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>📋 Derniers Contenus Ajoutés</h2>
+            <a href="manage-content.html" class="btn btn-outline btn-sm">Voir tout</a>
+          </div>
+          <div class="admin-card-body">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Contenu</th>
+                  <th>Catégorie</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Vidéo Entrainement Tactique</strong></td>
+                  <td><span class="status-badge active">Entrainement</span></td>
+                  <td>04 Avril 2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button title="Modifier">✏️</button>
+                      <button class="delete" title="Supprimer">🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Cheikh Sy - Nouvelle recrue</strong></td>
+                  <td><span class="status-badge active">Équipe</span></td>
+                  <td>02 Avril 2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button title="Modifier">✏️</button>
+                      <button class="delete" title="Supprimer">🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>HB Team vs AS Dakar (28-24)</strong></td>
+                  <td><span class="status-badge active">Compétition</span></td>
+                  <td>01 Avril 2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button title="Modifier">✏️</button>
+                      <button class="delete" title="Supprimer">🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Double Championnat-Coupe 2024</strong></td>
+                  <td><span class="status-badge active">Sacre</span></td>
+                  <td>28 Mars 2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button title="Modifier">✏️</button>
+                      <button class="delete" title="Supprimer">🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Coach Ibrahim Ndiaye - Hommage</strong></td>
+                  <td><span class="status-badge active">Hommage</span></td>
+                  <td>25 Mars 2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button title="Modifier">✏️</button>
+                      <button class="delete" title="Supprimer">🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>📊 Activité Récente</h2>
+          </div>
+          <div class="admin-card-body">
+            <div class="activity-list" id="activity-list">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="admin-card" style="margin-top: 24px;">
+        <div class="admin-card-header">
+          <h2>⚡ Actions Rapides</h2>
+        </div>
+        <div class="admin-card-body" style="padding: 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+          <a href="manage-content.html#entrainement" class="btn btn-outline" style="flex-direction: column; padding: 24px; gap: 8px;">
+            <span style="font-size: 32px;">🎥</span>
+            Ajouter une Vidéo
+          </a>
+          <a href="manage-content.html#equipe" class="btn btn-outline" style="flex-direction: column; padding: 24px; gap: 8px;">
+            <span style="font-size: 32px;">🏐</span>
+            Ajouter un Joueur
+          </a>
+          <a href="manage-content.html#competition" class="btn btn-outline" style="flex-direction: column; padding: 24px; gap: 8px;">
+            <span style="font-size: 32px;">🏆</span>
+            Ajouter un Match
+          </a>
+          <a href="manage-content.html#sacre" class="btn btn-outline" style="flex-direction: column; padding: 24px; gap: 8px;">
+            <span style="font-size: 32px;">🥇</span>
+            Ajouter un Trophée
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/admin.js"></script>
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1024px) {
+      .admin-content > div[style*="grid-template-columns: 2fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</body>
+</html>

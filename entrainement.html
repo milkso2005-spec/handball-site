@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vidéos d'entraînement de l'équipe de handball - Séances, exercices et préparations">
+  <title>Entrainement - HB Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-ball"></div>
+    <p class="loader-text">Chargement...</p>
+  </div>
+  <div class="toast-container"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-ball nav-ball-left"></div>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Logo">
+        HB<span>Team</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="entrainement.html" class="active">Entrainement</a>
+        <a href="competition.html">Compétition</a>
+        <a href="equipe/actifs.html">Équipe</a>
+        <a href="sacre.html">Sacre</a>
+        <a href="hommage.html">Hommage</a>
+      </div>
+      <div class="nav-ball nav-ball-right"></div>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html">Accueil</a>
+    <a href="entrainement.html">Entrainement</a>
+    <a href="competition.html">Compétition</a>
+    <a href="equipe/actifs.html">Équipe</a>
+    <a href="sacre.html">Sacre</a>
+    <a href="hommage.html">Hommage</a>
+  </div>
+
+  <button class="theme-toggle" aria-label="Changer le thème">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-hero">
+      <img src="assets/images/training-hero.png" alt="Entrainement" class="page-header-bg">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <h1 class="page-header-title">🏋️ Entrainement</h1>
+        <p class="page-header-desc">Découvrez nos séances d'entraînement, nos exercices et notre préparation physique
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN VIDEO PLAYER -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Vidéos</span>
+        <h2 class="section-title">Séances <span>d'Entrainement</span></h2>
+        <p class="section-desc">Revivez nos meilleures séances d'entraînement et nos exercices techniques</p>
+      </div>
+
+      <div class="video-player-container reveal" id="main-video-player">
+        <div class="video-placeholder">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24">
+              <polygon points="5,3 19,12 5,21" />
+            </svg>
+          </div>
+          <p style="color: var(--text-muted); font-family: var(--font-subheading); font-size: 16px;">Sélectionnez une
+            vidéo ci-dessous</p>
+        </div>
+      </div>
+
+      <!-- VIDEO GALLERY -->
+      <div class="video-gallery">
+        <div class="video-card reveal" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/training-hero.png" alt="Entrainement tactique">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">12:34</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Entrainement Tactique - Mouvements Collectifs</h4>
+            <p class="video-card-meta">📅 15 Mars 2025 • 👁️ 1.2k vues</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal delay-1" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/player-action.png" alt="Exercice de tir">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">08:45</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Exercices de Tir - Précision et Puissance</h4>
+            <p class="video-card-meta">📅 10 Mars 2025 • 👁️ 890 vues</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal delay-2" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/team-photo.png" alt="Défense collective">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">15:20</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Travail Défensif - Système 6-0 et 5-1</h4>
+            <p class="video-card-meta">📅 5 Mars 2025 • 👁️ 756 vues</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal delay-3" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/hero-banner.png" alt="Préparation physique">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">20:10</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Préparation Physique - Endurance et Force</h4>
+            <p class="video-card-meta">📅 1 Mars 2025 • 👁️ 634 vues</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal delay-4" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/celebration.png" alt="Contre-attaque">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">11:55</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Contre-Attaque Rapide - Transitions</h4>
+            <p class="video-card-meta">📅 25 Février 2025 • 👁️ 1.1k vues</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal delay-5" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          data-video-type="iframe">
+          <div class="video-card-thumb">
+            <img src="assets/images/player-action.png" alt="Exercice gardien">
+            <div class="play-overlay">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <span class="duration">09:30</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-card-title">Entrainement Gardiens - Arrêts et Relances</h4>
+            <p class="video-card-meta">📅 20 Février 2025 • 👁️ 920 vues</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD SECTION -->
+  <section class="upload-section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Cloud Storage</span>
+        <h2 class="section-title">Ajouter des <span>Vidéos</span></h2>
+        <p class="section-desc">Uploadez vos vidéos d'entraînement directement vers notre stockage cloud sécurisé</p>
+      </div>
+      <div class="upload-zone reveal" id="upload-zone">
+        <div class="upload-zone-icon">☁️</div>
+        <p class="upload-zone-text">Glissez vos fichiers ici ou cliquez pour parcourir</p>
+        <p class="upload-zone-hint">Formats acceptés : MP4, WebM, MOV - Max 500MB</p>
+        <input type="file" id="file-input" accept="video/*,image/*" multiple>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Logo" width="40" height="40" style="border-radius:50%;">
+            HB<span>Team</span>
+          </div>
+          <p class="footer-desc">Site dédié à la conservation de l'histoire de notre équipe de handball.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="entrainement.html">Entrainement</a>
+            <a href="competition.html">Compétition</a>
+            <a href="sacre.html">Sacre</a>
+            <a href="hommage.html">Hommage</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Équipe</h4>
+          <div class="footer-links">
+            <a href="equipe/actifs.html">Joueurs Actifs</a>
+            <a href="equipe/anciens.html">Anciens Joueurs</a>
+            <a href="equipe/nouveaux.html">Nouvelles Recrues</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Dakar, Sénégal</a>
+            <a href="#">📧 contact@hbteam.sn</a>
+            <a href="#">📞 +221 77 123 4567</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">&copy; 2025 HB<span>Team</span>. Tous droits réservés.</p>
+        <p class="footer-bottom-text">Fait avec 🏐 et ❤️ par BLACK WINDOWS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
