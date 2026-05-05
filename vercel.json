@@ -6,23 +6,23 @@
       "use": "@vercel/python"
     },
     {
-      "src": "css/**/*",
+      "src": "admin/**",
       "use": "@vercel/static"
     },
     {
-      "src": "js/**/*",
+      "src": "css/**",
       "use": "@vercel/static"
     },
     {
-      "src": "assets/**/*",
+      "src": "js/**",
       "use": "@vercel/static"
     },
     {
-      "src": "admin/**/*",
+      "src": "assets/**",
       "use": "@vercel/static"
     },
     {
-      "src": "equipe/**/*",
+      "src": "equipe/**",
       "use": "@vercel/static"
     },
     {
